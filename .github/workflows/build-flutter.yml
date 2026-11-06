@@ -36,6 +36,7 @@ jobs:
           cp -r ../keep/lib ../keep/assets ../keep/pubspec.yaml .
           sed -i 's/android:label="[^"]*"/android:label="QR PiX"/' android/app/src/main/AndroidManifest.xml
           sed -i 's#<application#<uses-permission android:name="android.permission.RECORD_AUDIO" /><uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /><application#' android/app/src/main/AndroidManifest.xml
+          sed -i 's/applicationId = "com.example.qr_pix"/applicationId = "com.abdullah.qr"/' android/app/build.gradle.kts
           sed -i 's/flutter.compileSdkVersion/36/' android/app/build.gradle.kts 2>/dev/null || true
           sed -i 's/compileSdkVersion flutter.compileSdkVersion/compileSdkVersion 36/' android/app/build.gradle 2>/dev/null || true
           cat >> android/build.gradle.kts << 'GRADLE'
